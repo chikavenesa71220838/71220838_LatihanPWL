@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT JavaScript 1</title>
+</head>
+<body>
+    <h1>Kalkulator Sederhana</h1>
+    <input type="button" value="Soal 1" onclick="kalkulator()">
+
+    <h1>Inputan Tidak Terduplikasi</h1>
+    <input type="button" value="Soal 2" onclick="tdkduplikat()">
+</body>
+</html>
+
+<script>
+    function kalkulator(){
+        while (true){
+            var angka1 = parseInt(prompt("Masukkan angka pertama :"));
+            var angka2 = parseInt(prompt("Masukkan angka kedua :"));
+
+            if (!isNaN(angka1) && !isNaN(angka2)){
+                var simbol = prompt("Masukkan operasi (+, -, *, /)");
+                if(simbol == "+" || simbol == "-" || simbol == "*" || simbol == "/"){
+                    if(simbol == "+"){
+                        alert(angka1 + angka2);
+                        break;
+                    } 
+                    else if(simbol == "-"){
+                        alert(angka1 - angka2);
+                        break;
+                    }
+                    else if(simbol == "*"){
+                        alert(angka1 * angka2);
+                        break;
+                    }
+                    else if(simbol == "/"){
+                        alert(angka1 / angka2);
+                        break;
+                    }
+                } else {
+                    alert("Maaf, tipe operasi " + simbol + " tidak tersedia !!");
+                }
+            } else {
+                alert("Input bukan merupakan integer, silahkan input ulang !!");
+            }
+        }
+    }
+
+    function tdkduplikat(){
+        //var mobil = [];
+        var mobil = ["Toyota", "Honda", "Toyota", "Nissan", "Tesla", "Honda", "Ford"];
+        kosong = "Array kosong !!"
+
+        if(mobil.length != 0){
+        
+            var mobilUnik = [...new Set(mobil)].sort();
+            leng = mobilUnik.length;
+
+            console.log("("+(leng)+")"+ mobilUnik);
+            for(i = 0; i<leng;i++){
+                console.log(i+": "+mobilUnik[i]);
+            }
+            console.log("length: "+ leng)
+
+        }
+        else{
+        console.log(kosong);
+        }
+    }
+</script>

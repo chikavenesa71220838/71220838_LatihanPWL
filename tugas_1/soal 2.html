@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zoo Reservation Form</title>
+    <style>
+      body {
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        background-color: #e0f7fa;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 600px;
+        background-color: #ffffff;
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 20px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #00796b;
+        margin-bottom: 20px;
+        font-size: 24px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        color: #00796b;
+        font-weight: bold;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="date"],
+      input[type="number"],
+      select {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 20px;
+        border: 1px solid #b2dfdb;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 16px;
+        transition: border-color 0.3s;
+      }
+
+      input[type="text"]:focus,
+      input[type="email"]:focus,
+      input[type="date"]:focus,
+      input[type="number"]:focus,
+      select:focus {
+        border-color: #00796b;
+        outline: none;
+      }
+
+      button {
+        width: 100%;
+        padding: 15px;
+        background-color: #00796b;
+        color: #ffffff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 18px;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: #004d40;
+      }
+
+      .error {
+        color: #e53935;
+        font-size: 14px;
+        margin-top: -15px;
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>OuO Zoo Reservation</h1>
+      <form id="zooForm">
+        <label for="name">Nama:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="phone">Nomor Telepon:</label>
+        <input type="text" id="phone" name="phone" required />
+
+        <label for="tgl">Tanggal :</label>
+        <input type="date" id="tgl" name="tgl" required />
+
+        <label for="attraction">Pilih Atraksi:</label>
+        <select id="attractionType">
+          <option value="">Select</option>
+          <option value="Safari Tour">Safari Tour</option>
+          <option value="Bird Show">Bird Show</option>
+          <option value="Aquarium Visit">Aquarium Visit</option>
+        </select>
+
+        <label for="tickets">Jumlah Tiket:</label>
+        <input type="number" id="tickets" name="tickets" min="1" required />
+
+        <label for="addOn">Pilih Add On:</label>
+        <select id="addOn">
+          <option value="">Select</option>
+        </select>
+
+        <p id="error-message" class="error"></p>
+
+        <button onclick="makeReservation()">Reserve</button>
+      </form>
+    </div>
+    <script src="tipeA.js"></script>
+  </body>
+</html>
